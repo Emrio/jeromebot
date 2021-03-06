@@ -13,6 +13,8 @@ async function handleGuildMessage (message: discord.Message): Promise<void> {
 
     switch (commandName) {
       case 'fanarts':
+        if (!config.fanarts.channels.src.includes(message.channel.id)) break
+
         const messages = await message.channel.fetchPinnedMessages()
         await Fanarts.processMessages(messages.array())
         await message.react('✅')

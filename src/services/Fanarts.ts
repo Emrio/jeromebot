@@ -19,10 +19,15 @@ class FanartsService extends Service {
     })
     await submission.save()
 
+    this.debug('New message: %O', {
+      member: message.author.toString(),
+      files: message.attachments.array().map(a => a.url)
+    })
+
     await destination.send(generateEmbed([
       {
         title: `:new: Fanart`,
-        body: `:artist: Author: ${message.member}\n:calendar_spiral: Submition date: ${moment(message.createdAt).format('MMMM Do YYYY')}\n${message.content ? (':scroll: Original message:\n' + message.content) : ''}`
+        body: `:artist: Author: ${message.author}\n:calendar_spiral: Submition date: ${moment(message.createdAt).format('MMMM Do YYYY')}\n${message.content ? (':scroll: Original message:\n' + message.content) : ''}`
       }
     ], {
       file: message.attachments.array()[0].url
