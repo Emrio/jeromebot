@@ -1,11 +1,14 @@
 import u from 'emrioutils'
 import { Client } from 'discord.js'
+import { Status } from '../services/Status'
 const debug = u.debug('bot')
 
 export const Bot = new Client()
 
 Bot.on('ready', () => {
   debug('I am ready!')
+
+  Status.start()
 })
 
 Bot.on('error', err => {
