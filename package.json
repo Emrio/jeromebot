@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "discord.js": "^11.6.4",
-    "emrioutils": "^3.1.12",
+    "emrioutils": "^3.3.2",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "mongoose": "^5.11.7"
