@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "es6",
+    "allowJs": false,
+    "outDir": "./build",
+    "removeComments": true,
+    "strict": true,
+    "noEmitOnError": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "downlevelIteration": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strictPropertyInitialization": false,
+    "resolveJsonModule": true,
+    "declaration": false,
+    "lib": ["es2019"]
+  },
+  "include": ["./src/**/*"]
+}

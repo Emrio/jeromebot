@@ -1,0 +1,37 @@
+{
+  "name": "jeromebot",
+  "version": "1.0.0",
+  "description": "A bot for TheBlueJerome's community server",
+  "main": "build/src/index.js",
+  "scripts": {
+    "start": "node .",
+    "build": "tsc",
+    "lint": "eslint src --ext .ts",
+    "lint-fix": "eslint src --ext .ts --fix"
+  },
+  "keywords": [],
+  "author": "Emrio <emrio@emrio.fr> (emrio.fr)",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.6.4",
+    "emrioutils": "^3.1.12",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.7"
+  },
+  "devDependencies": {
+    "@types/eslint": "^7.2.6",
+    "@types/lodash": "^4.14.161",
+    "@types/node": "^12.12.37",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "typescript": "^3.6.3"
+  }
+}

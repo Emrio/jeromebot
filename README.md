@@ -1,2 +1,2 @@
 # jeromebot
- A bot for TheBlueJerome's discord server
+> A bot for TheBlueJerome's community discord server
