@@ -1,6 +1,7 @@
 import u from 'emrioutils'
 import discord from 'discord.js'
 import config from '../config'
+import { Fanarts } from '../services/Fanarts'
 import { generateEmbed } from '../helpers/embeds'
 const msgDebug = u.debug('bot', 'message')
 
@@ -11,6 +12,11 @@ async function handleGuildMessage (message: discord.Message): Promise<void> {
     const commandName = message.content.substr(config.prefix.length).split(' ')[0].toLowerCase()
 
     switch (commandName) {
+      case 'fanarts':
+        const messages = await message.channel.fetchPinnedMessages()
+        await Fanarts.processMessages(messages.array())
+        await message.react('✅')
+        break
     }
   } catch (e) {
     msgDebug.error(e)
@@ -27,6 +33,10 @@ async function handleGuildMessage (message: discord.Message): Promise<void> {
 // fanart pins
 export async function handlePin (channel: discord.TextChannel): Promise<void> {
   if (!config.fanarts.channels.src.includes(channel.id)) return
+
+  const messages = await channel.fetchPinnedMessages()
+
+  await Fanarts.processMessages(messages.array())
 }
 
 export async function handleAnyMessage (message: discord.Message): Promise<void> {
