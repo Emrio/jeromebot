@@ -9,6 +9,8 @@ async function main (): Promise<void> {
   if (!process.env.DB_URL) throw new Error('No DB_URL env var found!')
 
   await mongoose.connect(process.env.DB_URL, config.databaseConfig)
+
+  await launchBot()
 }
 
 main().catch(err => {
