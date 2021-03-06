@@ -51,7 +51,11 @@ class FanartsService extends Service {
       const message = await destination.fetchMessage(msg.messageId)
 
       await msg.delete()
-      await message.delete()
+      try {
+        await message.delete()
+      } catch {
+        this.debug.error("Can't delete summary message %o", message.id)
+      }
     }
   }
 
