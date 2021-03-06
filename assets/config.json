@@ -14,6 +14,27 @@
     "error": 9640732,
     "fatalerror": 14431557
   },
+  "status": {
+    "update": 36000000,
+    "values": [
+      {
+        "type": "LISTENING",
+        "content": "Running to Never"
+      },
+      {
+        "type": "LISTENING",
+        "content": "Chemicals"
+      },
+      {
+        "type": "LISTENING",
+        "content": "Heroes Tonight"
+      },
+      {
+        "type": "LISTENING",
+        "content": "Hearts Fight On"
+      }
+    ]
+  },
   "fanarts": {
     "channels": {
       "src": [
