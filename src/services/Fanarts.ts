@@ -26,7 +26,7 @@ class FanartsService extends Service {
 
     await destination.send(generateEmbed([
       {
-        title: `:new: Fanart`,
+        title: ':new: Fanart',
         body: `:artist: Author: ${message.author}\n:calendar_spiral: Submition date: ${moment(message.createdAt).format('MMMM Do YYYY')}\n${message.content ? (':scroll: Original message:\n' + message.content) : ''}`
       }
     ], {

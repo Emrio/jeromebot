@@ -12,20 +12,22 @@ async function handleGuildMessage (message: discord.Message): Promise<void> {
     const commandName = message.content.substr(config.prefix.length).split(' ')[0].toLowerCase()
 
     switch (commandName) {
-      case 'fanarts':
+      case 'fanarts': {
         if (!config.fanarts.channels.src.includes(message.channel.id)) break
 
         const messages = await message.channel.fetchPinnedMessages()
         await Fanarts.processMessages(messages.array())
         await message.react('✅')
         break
+      }
     }
   } catch (e) {
     msgDebug.error(e)
 
     await message.channel.send(generateEmbed([{
       title: 'Internal Error',
-      body: 'An internal error occured and has been reported. Please try again.' }
+      body: 'An internal error occured and has been reported. Please try again.'
+    }
     ], {
       color: config.colors.error
     }))
