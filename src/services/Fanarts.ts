@@ -71,7 +71,7 @@ class FanartsService extends Service {
       }
     ], {
       title: 'Running to Never - Fanarts',
-      thumbnail: 'https://cdn.discordapp.com/attachments/792817576920219678/817853233169956875/tbj-icon.png'
+      thumbnail: 'https://static.emrio.fr/f/tbj-icon.png'
     }))
 
     const msg = new SpecialMessage({ messageId: message.id, messageType: MessageType.FANART_SUMMARY })
