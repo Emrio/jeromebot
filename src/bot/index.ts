@@ -1,5 +1,6 @@
 import u from 'emrioutils'
 import { Client } from 'discord.js'
+import { handleAnyMessage, handlePin } from './superHandlers'
 import { Status } from '../services/Status'
 const debug = u.debug('bot')
 
@@ -19,6 +20,10 @@ Bot.on('error', err => {
     debug.error(err)
   }
 })
+
+Bot.on('channelPinsUpdate', handlePin)
+
+Bot.on('message', handleAnyMessage)
 
 export async function launchBot (): Promise<void> {
   if (!process.env.TBJ_TOKEN) {
