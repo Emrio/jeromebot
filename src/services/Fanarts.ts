@@ -15,7 +15,7 @@ class FanartsService extends Service {
     const submission = new Submission({
       messageId: message.id,
       authorId: message.author.id,
-      attachmentCount: message.attachments.size
+      attachmentCount: message.attachments.array().length
     })
     await submission.save()
 
